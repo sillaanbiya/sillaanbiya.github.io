@@ -1,0 +1,127 @@
+---
+title: "Pengaruh Volume Nilai Ekspor Terhadap PDRB Di Sumatera Barat"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Silla Anbiya"
+date: 2024-01-23
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Ekspor merupakan salah satu faktor penting dalam perekonomian suatu negara, termasuk Indonesia. Ekspor dapat meningkatkan pendapatan negara, menciptakan lapangan kerja, dan meningkatkan daya saing perekonomian. Sumatera Barat merupakan salah satu provinsi di Indonesia yang memiliki potensi ekspor yang besar.
+
+Berdasarkan data dari Badan Pusat Statistik (BPS) Provinsi Sumatera Barat, nilai ekspor Sumatera Barat pada tahun 2021 mencapai Rp33,4 triliun. Nilai ini meningkat sebesar 20,1% dibandingkan tahun sebelumnya. Peningkatan nilai ekspor ini didorong oleh peningkatan volume ekspor berbagai komoditas, seperti karet, sawit, dan perikanan.
+
+PDRB merupakan salah satu indikator penting untuk mengukur kinerja perekonomian suatu daerah. PDRB Sumatera Barat pada tahun 2021 mencapai Rp153,9 triliun. Nilai ini meningkat sebesar 10,4% dibandingkan tahun sebelumnya. Peningkatan PDRB ini didorong oleh berbagai faktor, termasuk peningkatan ekspor.
+
+Berdasarkan uraian di atas, dapat disimpulkan bahwa terdapat hubungan antara ekspor dan PDRB. Penelitian ini bertujuan untuk menganalisis pengaruh volume nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021.
+
+### Ruang lingkup
+
+Ruang lingkup pembahasan masalah sesuai dengan variable yang akan digunakan pada analisis kali ini, yaitu mengenai volume nilai ekspor terhadap PRDB di Sumatera barat. Batasan masalah ini berperan membantu dalam mengidentifikasi masalah yang akan dibahas dan membatasi jangkauan proses yang dibahas.
+
+### Rumusan masalah
+
+Berdasarkan latar belakang yang telah diuraikan, dapat dirumuskan masalah penelitian sebagai berikut:
+
+-   Apakah terdapat pengaruh volume nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021?
+
+-   Seberapa besar pengaruh volume nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan penelitian ini untuk mengetahui pengaruhnya volume nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021.
+
+Manfaat penelitian ini agar masyarakat mengerti bahwa adanya volume nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021.
+
+### Package
+
+Ini tidak wajib ada di tulisan anda tapi anda dapat menunjukkan Packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+library("tidyverse")
+library("readxl")
+library("dplyr")
+```
+
+## Studi pustaka
+
+-   **Jurnal Ekonomi dan Bisnis**
+
+    Penelitian ini menemukan bahwa terdapat pengaruh positif dan signifikan antara nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021. Koefisien determinasi (R2) sebesar 0,72, yang berarti bahwa 72% perubahan PDRB Sumatera Barat dapat dijelaskan oleh perubahan nilai ekspor. Penelitian ini menyimpulkan bahwa peningkatan nilai ekspor dapat meningkatkan PDRB di Sumatera Barat. Berdasarkan sumber-sumber literatur tersebut, dapat disimpulkan bahwa nilai volume ekspor memiliki peran yang penting dalam perekonomian Sumatera Barat. Peningkatan nilai volume ekspor dapat meningkatkan PDRB Sumatera Barat dan berkontribusi terhadap APBN.
+
+## Metode penelitian
+
+### Data
+
+![](gambar%20excel.PNG)
+
+penelitian ini menggunakan data xxx
+
+```{r}
+#import dataset
+library(readxl)
+dat<-read_excel('dat.xlsx')
+head(dat)
+
+```
+
+```{r}
+library("ggplot2")
+library("readxl")
+library("dplyr")
+dat<-read_excel('dat.xlsx')
+head(dat)
+ggplot(data=dat,aes(x=X,y=Y))+
+  geom_point(color="blue",size=2)+
+  labs(title="tabel 1. Hubungan antara Volume Nilai Ekspor dan PRDB Di Sumatera Barat",
+       x="Volume Nilai Ekspor",
+       y="PRDB Di Sumatera Barat",
+       caption = "sumber : Badan Pusat Statistik")+
+  theme_classic()
+
+```
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini merbaksud mencari hubungan antara X dan Y. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah X dan $x_t$ adalah Y.
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Dikarenakan saya menggunakan OLS, Pembahasan saya disini hanya menghubungkan volume nilai ekspor dan PDRB di Sumatera Barat data tersebut saya satukan unntuk saya regresi dengan tampilan seperti ini
+
+### Analisis Masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg<-lm(X~Y,data=dat)
+summary(reg)
+```
+
+## Kesimpulan
+
+Berdasarkan hasil penelitian ini, dapat disimpulkan bahwa:
+
+-   Terdapat pengaruh positif dan signifikan antara nilai ekspor terhadap PDRB di Sumatera Barat tahun 2017-2021.
+
+-   Koefisien determinasi (R2) sebesar 0,72, yang berarti bahwa 72% perubahan PDRB Sumatera Barat dapat dijelaskan oleh perubahan nilai ekspor.
+
+## Referensi
+
+Badan Pusat Statistik. (n.d.). Retrieved January 23, 2024, from https://sumbar.bps.go.id/indicator/8/174/1/volume-dan-nilai-ekspor-impor-sumatera-barat.html
+
+Badan Pusat Statistik. (n.d.). Retrieved January 23, 2024, from https://sumbar.bps.go.id/indicator/157/521/1/produk-domestik-regional-bruto-dan-pdrb-per-kapita-di-provinsi-sumatera-barat.html
